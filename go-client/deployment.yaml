@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-client-deployment
+  labels:
+    app: go-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-client
+  template:
+    metadata:
+      labels:
+        app: go-client
+    spec:
+      containers:
+      - name: go-client
+        image: quay.io/rh-ee-obengali/go-client:1.0.0
+        env:
+        - name: ServerIP
+          valueFrom:
+            configMapKeyRef:
+              name: server-ip
+              key: server-ip-address
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
