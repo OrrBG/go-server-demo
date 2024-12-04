@@ -10,3 +10,7 @@ While kubernetes may have a steeper learning curve I believe the containerized k
 1. ease of use: once you familiarize youself with kubectl syntax it becomes very intuitive and easy to deploy and customize applications while in a VM you must do everything manually
 2. scalability: it is very easy to scale applications using kubernetes
 3. protection mechanisms: including rollout methodologies, health checks, replication colntrollers and services are all built in and easy to use in kubernetes
+4. version control: kubernetes allows seemless continuous integration of version control using configuration change and image change triggers while again, using VMs is a manual process
+5. networking between services and outside of the cluster is managed by kubernetes with built in resources (eg. services, routes, ingress)
+
+In conclusion, Kubernetes is a system that allows for robust orchestration and maintenance of multi service applications, extremely configurable and easy to use in order to acheive impressive results quickly. 
